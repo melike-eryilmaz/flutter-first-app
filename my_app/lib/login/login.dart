@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:my_app/catlist/catlist.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -39,7 +40,13 @@ class _LoginState extends State<Login> {
         ElevatedButton(
           style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.redAccent)),
-          onPressed: () {},
+          onPressed: () {
+            //pushReplacement geri tuşunu göstermez.geri gelemez sayfadan :)
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => CatList()),
+            );
+          },
           child: const Text('Login'),
         ),
         SizedBox(height: 50)
